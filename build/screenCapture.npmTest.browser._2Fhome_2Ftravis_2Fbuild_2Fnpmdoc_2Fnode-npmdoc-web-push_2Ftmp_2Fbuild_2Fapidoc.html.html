@@ -1,0 +1,1599 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/web-push-libs/web-push#readme">web-push (v3.2.2)</a>
+</h1>
+<h4>Web Push library for Node.js</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-push">module web-push</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.encrypt">
+            function <span class="apidocSignatureSpan">web-push.</span>encrypt
+            <span class="apidocSignatureSpan">(userPublicKey, userAuth, payload)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.generateRequestDetails">
+            function <span class="apidocSignatureSpan">web-push.</span>generateRequestDetails
+            <span class="apidocSignatureSpan">(subscription, payload, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.generateVAPIDKeys">
+            function <span class="apidocSignatureSpan">web-push.</span>generateVAPIDKeys
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.getVapidHeaders">
+            function <span class="apidocSignatureSpan">web-push.</span>getVapidHeaders
+            <span class="apidocSignatureSpan">(audience, subject, publicKey, privateKey, expiration)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.sendNotification">
+            function <span class="apidocSignatureSpan">web-push.</span>sendNotification
+            <span class="apidocSignatureSpan">(subscription, payload, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.setGCMAPIKey">
+            function <span class="apidocSignatureSpan">web-push.</span>setGCMAPIKey
+            <span class="apidocSignatureSpan">(apiKey)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.setVapidDetails">
+            function <span class="apidocSignatureSpan">web-push.</span>setVapidDetails
+            <span class="apidocSignatureSpan">(subject, publicKey, privateKey)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.web_push_error">
+            function <span class="apidocSignatureSpan">web-push.</span>web_push_error
+            <span class="apidocSignatureSpan">(message, statusCode, headers, body, endpoint)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.web_push_js">
+            function <span class="apidocSignatureSpan">web-push.</span>web_push_js
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">web-push.</span>encryption_helper</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">web-push.</span>vapid_helper</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">web-push.</span>web_push_js.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-push.encryption_helper">module web-push.encryption_helper</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.encryption_helper.encrypt">
+            function <span class="apidocSignatureSpan">web-push.encryption_helper.</span>encrypt
+            <span class="apidocSignatureSpan">(userPublicKey, userAuth, payload)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-push.vapid_helper">module web-push.vapid_helper</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.vapid_helper.generateVAPIDKeys">
+            function <span class="apidocSignatureSpan">web-push.vapid_helper.</span>generateVAPIDKeys
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.vapid_helper.getVapidHeaders">
+            function <span class="apidocSignatureSpan">web-push.vapid_helper.</span>getVapidHeaders
+            <span class="apidocSignatureSpan">(audience, subject, publicKey, privateKey, expiration)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.vapid_helper.validatePrivateKey">
+            function <span class="apidocSignatureSpan">web-push.vapid_helper.</span>validatePrivateKey
+            <span class="apidocSignatureSpan">(privateKey)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.vapid_helper.validatePublicKey">
+            function <span class="apidocSignatureSpan">web-push.vapid_helper.</span>validatePublicKey
+            <span class="apidocSignatureSpan">(publicKey)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.vapid_helper.validateSubject">
+            function <span class="apidocSignatureSpan">web-push.vapid_helper.</span>validateSubject
+            <span class="apidocSignatureSpan">(subject)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-push.web_push_error">module web-push.web_push_error</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.web_push_error.web_push_error">
+            function <span class="apidocSignatureSpan">web-push.</span>web_push_error
+            <span class="apidocSignatureSpan">(message, statusCode, headers, body, endpoint)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.web_push_error.super_">
+            function <span class="apidocSignatureSpan">web-push.web_push_error.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-push.web_push_js">module web-push.web_push_js</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.web_push_js.web_push_js">
+            function <span class="apidocSignatureSpan">web-push.</span>web_push_js
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.web-push.web_push_js.prototype">module web-push.web_push_js.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.web_push_js.prototype.generateRequestDetails">
+            function <span class="apidocSignatureSpan">web-push.web_push_js.prototype.</span>generateRequestDetails
+            <span class="apidocSignatureSpan">(subscription, payload, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.web_push_js.prototype.sendNotification">
+            function <span class="apidocSignatureSpan">web-push.web_push_js.prototype.</span>sendNotification
+            <span class="apidocSignatureSpan">(subscription, payload, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.web_push_js.prototype.setGCMAPIKey">
+            function <span class="apidocSignatureSpan">web-push.web_push_js.prototype.</span>setGCMAPIKey
+            <span class="apidocSignatureSpan">(apiKey)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.web-push.web_push_js.prototype.setVapidDetails">
+            function <span class="apidocSignatureSpan">web-push.web_push_js.prototype.</span>setVapidDetails
+            <span class="apidocSignatureSpan">(subject, publicKey, privateKey)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-push" id="apidoc.module.web-push">module web-push</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.encrypt" id="apidoc.element.web-push.encrypt">
+        function <span class="apidocSignatureSpan">web-push.</span>encrypt
+        <span class="apidocSignatureSpan">(userPublicKey, userAuth, payload)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encrypt = function (userPublicKey, userAuth, payload) {
+  if (!userPublicKey) {
+    throw new Error('No user public key provided for encryption.');
+  }
+
+  if (typeof userPublicKey !== 'string') {
+    throw new Error('The subscription p256dh value must be a string.');
+  }
+
+  if (urlBase64.decode(userPublicKey).length !== 65) {
+    throw new Error('The subscription p256dh value should be 65 bytes long.');
+  }
+
+  if (!userAuth) {
+    throw new Error('No user auth provided for encryption.');
+  }
+
+  if (typeof userAuth !== 'string') {
+    throw new Error('The subscription auth key must be a string.');
+  }
+
+  if (urlBase64.decode(userAuth).length &lt; 16) {
+    throw new Error('The subscription auth key should be at least 16 ' +
+      'bytes long');
+  }
+
+  if (typeof payload !== 'string' &amp;&amp; !Buffer.isBuffer(payload)) {
+    throw new Error('Payload must be either a string or a Node Buffer.');
+  }
+
+  if (typeof payload === 'string' || payload instanceof String) {
+    payload = new Buffer(payload);
+  }
+
+  const localCurve = crypto.createECDH('prime256v1');
+  const localPublicKey = localCurve.generateKeys();
+
+  const salt = urlBase64.encode(crypto.randomBytes(16));
+
+  ece.saveKey('webpushKey', localCurve, 'P-256');
+
+  const cipherText = ece.encrypt(payload, {
+    keyid: 'webpushKey',
+    dh: userPublicKey,
+    salt: salt,
+    authSecret: userAuth,
+    padSize: 2
+  });
+
+  return {
+    localPublicKey: localPublicKey,
+    salt: salt,
+    cipherText: cipherText
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+const pushSubscription = {
+  endpoint: 'https://....',
+  keys: {
+    p256dh: '.....',
+    auth: '.....'
+  }
+};
+webPush.<span class="apidocCodeKeywordSpan">encrypt</span>(
+  pushSubscription.keys.p256dh,
+  pushSubscription.keys.auth,
+  'My Payload'
+)
+.then(encryptionDetails =&gt; {
+
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.generateRequestDetails" id="apidoc.element.web-push.generateRequestDetails">
+        function <span class="apidocSignatureSpan">web-push.</span>generateRequestDetails
+        <span class="apidocSignatureSpan">(subscription, payload, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">generateRequestDetails = function (subscription, payload, options) {
+  if (!subscription || !subscription.endpoint) {
+    throw new Error('You must pass in a subscription with at least ' +
+      'an endpoint.');
+  }
+
+  if (typeof subscription.endpoint !== 'string' ||
+    subscription.endpoint.length === 0) {
+    throw new Error('The subscription endpoint must be a string with ' +
+      'a valid URL.');
+  }
+
+  if (payload) {
+    // Validate the subscription keys
+    if (!subscription.keys || !subscription.keys.p256dh ||
+      !subscription.keys.auth) {
+      throw new Error('To send a message with a payload, the ' +
+        'subscription must have \'auth\' and \'p256dh\' keys.');
+    }
+  }
+
+  let currentGCMAPIKey = gcmAPIKey;
+  let currentVapidDetails = vapidDetails;
+  let timeToLive = DEFAULT_TTL;
+  let extraHeaders = {};
+
+  if (options) {
+    const validOptionKeys = [
+      'headers',
+      'gcmAPIKey',
+      'vapidDetails',
+      'TTL'
+    ];
+    const optionKeys = Object.keys(options);
+    for (let i = 0; i &lt; optionKeys.length; i += 1) {
+      const optionKey = optionKeys[i];
+      if (validOptionKeys.indexOf(optionKey) === -1) {
+        throw new Error('\'' + optionKey + '\' is an invalid option. ' +
+          'The valid options are [\'' + validOptionKeys.join('\', \'') +
+          '\'].');
+      }
+    }
+
+    if (options.headers) {
+      extraHeaders = options.headers;
+      let duplicates = Object.keys(extraHeaders)
+          .filter(function (header) {
+            return typeof options[header] !== 'undefined';
+          });
+
+      if (duplicates.length &gt; 0) {
+        throw new Error('Duplicated headers defined [' +
+          duplicates.join(',') + ']. Please either define the header in the' +
+          'top level options OR in the \'headers\' key.');
+      }
+    }
+
+    if (options.gcmAPIKey) {
+      currentGCMAPIKey = options.gcmAPIKey;
+    }
+
+    if (options.vapidDetails) {
+      currentVapidDetails = options.vapidDetails;
+    }
+
+    if (options.TTL) {
+      timeToLive = options.TTL;
+    }
+  }
+
+  if (typeof timeToLive === 'undefined') {
+    timeToLive = DEFAULT_TTL;
+  }
+
+  const requestDetails = {
+    method: 'POST',
+    headers: {
+      TTL: timeToLive
+    }
+  };
+  Object.keys(extraHeaders).forEach(function (header) {
+    requestDetails.headers[header] = extraHeaders[header];
+  });
+  let requestPayload = null;
+
+  if (payload) {
+    if (!subscription.keys ||
+      typeof subscription !== 'object' ||
+      !subscription.keys.p256dh ||
+      !subscription.keys.auth) {
+      throw new Error(new Error('Unable to send a message with ' +
+        'payload to this subscription since it doesn\'t have the ' +
+        'required encryption keys'));
+    }
+
+    const encrypted = encryptionHelper.encrypt(
+      subscription.keys.p256dh, subscription.keys.auth, payload);
+
+    requestDetails.headers['Content-Length'] = encrypted.cipherText.length;
+    requestDetails.headers['Content-Type'] = 'application/octet-stream';
+    requestDetails.headers['Content-Encoding'] = 'aesgcm';
+    requestDetails.headers.Encryption = 'salt=' + encrypted.salt;
+    requestDetails.headers['Crypto-Key'] = 'dh=' + urlBase64.encode(encrypted.localPublicKey);
+
+    requestPayload = encrypted.cipherText;
+  } else {
+    requestDetails.headers['Content-Length'] = 0;
+  }
+
+  const isGCM = subscription.endpoint.indexOf(
+    'https://android.googleapis.com/gcm/send') === 0;
+  // VAPID isn't supported by GCM hence the if, else if.
+  if (isGCM) {
+    if (!currentGCMAPIKey) {
+      console.warn('Attempt to send push notification to GCM endpoint, ' +
+        'but no GCM key is defined. Please use setGCMApiKey() or add ' +
+        '\'gcmAPIKey\' as an option.');
+    } else {
+      requestDetails.headers.Authorization = 'key=' + currentGCMAPIKey;
+    }
+  } else if (currentVapidDetails) {
+    const parsedUrl = url.parse(subscription.endpoint);
+    const audience = parsedUrl.protocol + '//' +
+      parsedUrl.hostname;
+
+    const vapidHeaders = vapidHelper.getVapidHeaders(
+      audience,
+      currentVapidDetails.subject,
+      currentVapidDetails.publicKey,
+      currentVapidDetails.privateKey ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  TTL: &lt;Number&gt;,
+  headers: {
+    '&lt; header name &gt;': '&lt; header value &gt;'
+  }
+}
+
+try {
+  const details = webpush.<span class="apidocCodeKeywordSpan">generateRequestDetails</span>(
+    pushSubscription,
+    payload,
+    options
+  );
+} catch (err) {
+  console.error(err);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.generateVAPIDKeys" id="apidoc.element.web-push.generateVAPIDKeys">
+        function <span class="apidocSignatureSpan">web-push.</span>generateVAPIDKeys
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function generateVAPIDKeys() {
+  const curve = crypto.createECDH('prime256v1');
+  curve.generateKeys();
+
+  return {
+    publicKey: urlBase64.encode(curve.getPublicKey()),
+    privateKey: urlBase64.encode(curve.getPrivateKey())
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+The common use case for this library is an application server using
+a GCM API key and VAPID keys.
+
+```javascript
+const webpush = require('web-push');
+
+// VAPID keys should only be generated only once.
+const vapidKeys = webpush.<span class="apidocCodeKeywordSpan">generateVAPIDKeys</span>();
+
+webpush.setGCMAPIKey('&lt;Your GCM API Key Here&gt;');
+webpush.setVapidDetails(
+  'mailto:example@yourdomain.org',
+  vapidKeys.publicKey,
+  vapidKeys.privateKey
+);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.getVapidHeaders" id="apidoc.element.web-push.getVapidHeaders">
+        function <span class="apidocSignatureSpan">web-push.</span>getVapidHeaders
+        <span class="apidocSignatureSpan">(audience, subject, publicKey, privateKey, expiration)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getVapidHeaders(audience, subject, publicKey, privateKey, expiration) {
+  if (!audience) {
+    throw new Error('No audience could be generated for VAPID.');
+  }
+
+  if (typeof audience !== 'string' || audience.length === 0) {
+    throw new Error('The audience value must be a string containing the ' +
+      'origin of a push service. ' + audience);
+  }
+
+  const audienceParseResult = url.parse(audience);
+  if (!audienceParseResult.hostname) {
+    throw new Error('VAPID audience is not a url. ' + audience);
+  }
+
+  validateSubject(subject);
+  validatePublicKey(publicKey);
+  validatePrivateKey(privateKey);
+
+  publicKey = urlBase64.decode(publicKey);
+  privateKey = urlBase64.decode(privateKey);
+
+  const DEFAULT_EXPIRATION = Math.floor(Date.now() / 1000) + 43200;
+
+  if (expiration) {
+    // TODO: Check if expiration is valid and use it in place of the hard coded
+    // expiration of 24hours.
+  }
+
+  const header = {
+    typ: 'JWT',
+    alg: 'ES256'
+  };
+
+  const jwtPayload = {
+    aud: audience,
+    exp: DEFAULT_EXPIRATION,
+    sub: subject
+  };
+
+  const jwt = jws.sign({
+    header: header,
+    payload: jwtPayload,
+    privateKey: toPEM(privateKey)
+  });
+
+  return {
+    Authorization: 'WebPush ' + jwt,
+    'Crypto-Key': 'p256ecdsa=' + urlBase64.encode(publicKey)
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## getVapidHeaders(audience, subject, publicKey, privateKey, expiration)
+
+```javascript
+const parsedUrl = url.parse(subscription.endpoint);
+const audience = parsedUrl.protocol + '//' +
+  parsedUrl.hostname;
+
+const vapidHeaders = vapidHelper.<span class="apidocCodeKeywordSpan">getVapidHeaders</span>(
+  audience,
+  'mailto: example@web-push-node.org',
+  vapidDetails.publicKey,
+  vapidDetails.privateKey
+);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.sendNotification" id="apidoc.element.web-push.sendNotification">
+        function <span class="apidocSignatureSpan">web-push.</span>sendNotification
+        <span class="apidocSignatureSpan">(subscription, payload, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendNotification = function (subscription, payload, options) {
+  let requestDetails;
+  try {
+    requestDetails = this.generateRequestDetails(
+      subscription, payload, options);
+  } catch (err) {
+    return Promise.reject(err);
+  }
+
+  return new Promise(function(resolve, reject) {
+    const httpsOptions = {};
+    const urlParts = url.parse(requestDetails.endpoint);
+    httpsOptions.hostname = urlParts.hostname;
+    httpsOptions.port = urlParts.port;
+    httpsOptions.path = urlParts.path;
+
+    httpsOptions.headers = requestDetails.headers;
+    httpsOptions.method = requestDetails.method;
+
+    const pushRequest = https.request(httpsOptions, function(pushResponse) {
+      let responseText = '';
+
+      pushResponse.on('data', function(chunk) {
+        responseText += chunk;
+      });
+
+      pushResponse.on('end', function() {
+        if (pushResponse.statusCode !== 201) {
+          reject(new WebPushError('Received unexpected response code',
+            pushResponse.statusCode, pushResponse.headers, responseText, subscription.endpoint));
+        } else {
+          resolve({
+            statusCode: pushResponse.statusCode,
+            body: responseText,
+            headers: pushResponse.headers
+          });
+        }
+      });
+    });
+
+    pushRequest.on('error', function(e) {
+      reject(e);
+    });
+
+    if (requestDetails.body) {
+      pushRequest.write(requestDetails.body);
+    }
+
+    pushRequest.end();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  endpoint: '.....',
+  keys: {
+    auth: '.....',
+    p256dh: '.....'
+  }
+};
+
+webpush.<span class="apidocCodeKeywordSpan">sendNotification</span>(pushSubscription, 'Your Push Payload Text');
+```
+
+## Using VAPID Key for applicationServerKey
+
+When using your VAPID key in your web app, you'll need to convert the
+URL safe base64 string to a Uint8Array to pass into the subscribe call,
+which you can do like so:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.setGCMAPIKey" id="apidoc.element.web-push.setGCMAPIKey">
+        function <span class="apidocSignatureSpan">web-push.</span>setGCMAPIKey
+        <span class="apidocSignatureSpan">(apiKey)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setGCMAPIKey = function (apiKey) {
+  if (apiKey === null) {
+    gcmAPIKey = null;
+    return;
+  }
+
+  if (typeof apiKey === 'undefined' || typeof apiKey !== 'string' ||
+    apiKey.length === 0) {
+    throw new Error('The GCM API Key should be a non-empty string or null.');
+  }
+
+  gcmAPIKey = apiKey;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+const webpush = require('web-push');
+
+// VAPID keys should only be generated only once.
+const vapidKeys = webpush.generateVAPIDKeys();
+
+webpush.<span class="apidocCodeKeywordSpan">setGCMAPIKey</span>('&lt;Your GCM API Key Here&gt;');
+webpush.setVapidDetails(
+  'mailto:example@yourdomain.org',
+  vapidKeys.publicKey,
+  vapidKeys.privateKey
+);
+
+// This is the same output of calling JSON.stringify on a PushSubscription
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.setVapidDetails" id="apidoc.element.web-push.setVapidDetails">
+        function <span class="apidocSignatureSpan">web-push.</span>setVapidDetails
+        <span class="apidocSignatureSpan">(subject, publicKey, privateKey)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setVapidDetails = function (subject, publicKey, privateKey) {
+  if (arguments.length === 1 &amp;&amp; arguments[0] === null) {
+    vapidDetails = null;
+    return;
+  }
+
+  vapidHelper.validateSubject(subject);
+  vapidHelper.validatePublicKey(publicKey);
+  vapidHelper.validatePrivateKey(privateKey);
+
+  vapidDetails = {
+    subject: subject,
+    publicKey: publicKey,
+    privateKey: privateKey
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+const webpush = require('web-push');
+
+// VAPID keys should only be generated only once.
+const vapidKeys = webpush.generateVAPIDKeys();
+
+webpush.setGCMAPIKey('&lt;Your GCM API Key Here&gt;');
+webpush.<span class="apidocCodeKeywordSpan">setVapidDetails</span>(
+  'mailto:example@yourdomain.org',
+  vapidKeys.publicKey,
+  vapidKeys.privateKey
+);
+
+// This is the same output of calling JSON.stringify on a PushSubscription
+const pushSubscription = {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.web_push_error" id="apidoc.element.web-push.web_push_error">
+        function <span class="apidocSignatureSpan">web-push.</span>web_push_error
+        <span class="apidocSignatureSpan">(message, statusCode, headers, body, endpoint)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WebPushError(message, statusCode, headers, body, endpoint) {
+  Error.captureStackTrace(this, this.constructor);
+
+  this.name = this.constructor.name;
+  this.message = message;
+  this.statusCode = statusCode;
+  this.headers = headers;
+  this.body = body;
+  this.endpoint = endpoint;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.web_push_js" id="apidoc.element.web-push.web_push_js">
+        function <span class="apidocSignatureSpan">web-push.</span>web_push_js
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WebPushLib() {
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-push.encryption_helper" id="apidoc.module.web-push.encryption_helper">module web-push.encryption_helper</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.encryption_helper.encrypt" id="apidoc.element.web-push.encryption_helper.encrypt">
+        function <span class="apidocSignatureSpan">web-push.encryption_helper.</span>encrypt
+        <span class="apidocSignatureSpan">(userPublicKey, userAuth, payload)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encrypt = function (userPublicKey, userAuth, payload) {
+  if (!userPublicKey) {
+    throw new Error('No user public key provided for encryption.');
+  }
+
+  if (typeof userPublicKey !== 'string') {
+    throw new Error('The subscription p256dh value must be a string.');
+  }
+
+  if (urlBase64.decode(userPublicKey).length !== 65) {
+    throw new Error('The subscription p256dh value should be 65 bytes long.');
+  }
+
+  if (!userAuth) {
+    throw new Error('No user auth provided for encryption.');
+  }
+
+  if (typeof userAuth !== 'string') {
+    throw new Error('The subscription auth key must be a string.');
+  }
+
+  if (urlBase64.decode(userAuth).length &lt; 16) {
+    throw new Error('The subscription auth key should be at least 16 ' +
+      'bytes long');
+  }
+
+  if (typeof payload !== 'string' &amp;&amp; !Buffer.isBuffer(payload)) {
+    throw new Error('Payload must be either a string or a Node Buffer.');
+  }
+
+  if (typeof payload === 'string' || payload instanceof String) {
+    payload = new Buffer(payload);
+  }
+
+  const localCurve = crypto.createECDH('prime256v1');
+  const localPublicKey = localCurve.generateKeys();
+
+  const salt = urlBase64.encode(crypto.randomBytes(16));
+
+  ece.saveKey('webpushKey', localCurve, 'P-256');
+
+  const cipherText = ece.encrypt(payload, {
+    keyid: 'webpushKey',
+    dh: userPublicKey,
+    salt: salt,
+    authSecret: userAuth,
+    padSize: 2
+  });
+
+  return {
+    localPublicKey: localPublicKey,
+    salt: salt,
+    cipherText: cipherText
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+const pushSubscription = {
+  endpoint: 'https://....',
+  keys: {
+    p256dh: '.....',
+    auth: '.....'
+  }
+};
+webPush.<span class="apidocCodeKeywordSpan">encrypt</span>(
+  pushSubscription.keys.p256dh,
+  pushSubscription.keys.auth,
+  'My Payload'
+)
+.then(encryptionDetails =&gt; {
+
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-push.vapid_helper" id="apidoc.module.web-push.vapid_helper">module web-push.vapid_helper</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.vapid_helper.generateVAPIDKeys" id="apidoc.element.web-push.vapid_helper.generateVAPIDKeys">
+        function <span class="apidocSignatureSpan">web-push.vapid_helper.</span>generateVAPIDKeys
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function generateVAPIDKeys() {
+  const curve = crypto.createECDH('prime256v1');
+  curve.generateKeys();
+
+  return {
+    publicKey: urlBase64.encode(curve.getPublicKey()),
+    privateKey: urlBase64.encode(curve.getPrivateKey())
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+The common use case for this library is an application server using
+a GCM API key and VAPID keys.
+
+```javascript
+const webpush = require('web-push');
+
+// VAPID keys should only be generated only once.
+const vapidKeys = webpush.<span class="apidocCodeKeywordSpan">generateVAPIDKeys</span>();
+
+webpush.setGCMAPIKey('&lt;Your GCM API Key Here&gt;');
+webpush.setVapidDetails(
+  'mailto:example@yourdomain.org',
+  vapidKeys.publicKey,
+  vapidKeys.privateKey
+);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.vapid_helper.getVapidHeaders" id="apidoc.element.web-push.vapid_helper.getVapidHeaders">
+        function <span class="apidocSignatureSpan">web-push.vapid_helper.</span>getVapidHeaders
+        <span class="apidocSignatureSpan">(audience, subject, publicKey, privateKey, expiration)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getVapidHeaders(audience, subject, publicKey, privateKey, expiration) {
+  if (!audience) {
+    throw new Error('No audience could be generated for VAPID.');
+  }
+
+  if (typeof audience !== 'string' || audience.length === 0) {
+    throw new Error('The audience value must be a string containing the ' +
+      'origin of a push service. ' + audience);
+  }
+
+  const audienceParseResult = url.parse(audience);
+  if (!audienceParseResult.hostname) {
+    throw new Error('VAPID audience is not a url. ' + audience);
+  }
+
+  validateSubject(subject);
+  validatePublicKey(publicKey);
+  validatePrivateKey(privateKey);
+
+  publicKey = urlBase64.decode(publicKey);
+  privateKey = urlBase64.decode(privateKey);
+
+  const DEFAULT_EXPIRATION = Math.floor(Date.now() / 1000) + 43200;
+
+  if (expiration) {
+    // TODO: Check if expiration is valid and use it in place of the hard coded
+    // expiration of 24hours.
+  }
+
+  const header = {
+    typ: 'JWT',
+    alg: 'ES256'
+  };
+
+  const jwtPayload = {
+    aud: audience,
+    exp: DEFAULT_EXPIRATION,
+    sub: subject
+  };
+
+  const jwt = jws.sign({
+    header: header,
+    payload: jwtPayload,
+    privateKey: toPEM(privateKey)
+  });
+
+  return {
+    Authorization: 'WebPush ' + jwt,
+    'Crypto-Key': 'p256ecdsa=' + urlBase64.encode(publicKey)
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## getVapidHeaders(audience, subject, publicKey, privateKey, expiration)
+
+```javascript
+const parsedUrl = url.parse(subscription.endpoint);
+const audience = parsedUrl.protocol + '//' +
+  parsedUrl.hostname;
+
+const vapidHeaders = vapidHelper.<span class="apidocCodeKeywordSpan">getVapidHeaders</span>(
+  audience,
+  'mailto: example@web-push-node.org',
+  vapidDetails.publicKey,
+  vapidDetails.privateKey
+);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.vapid_helper.validatePrivateKey" id="apidoc.element.web-push.vapid_helper.validatePrivateKey">
+        function <span class="apidocSignatureSpan">web-push.vapid_helper.</span>validatePrivateKey
+        <span class="apidocSignatureSpan">(privateKey)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function validatePrivateKey(privateKey) {
+  if (!privateKey) {
+    throw new Error('No key set in vapidDetails.privateKey');
+  }
+
+  if (typeof privateKey !== 'string') {
+    throw new Error('Vapid private key must be a URL safe Base 64 ' +
+      'encoded string.');
+  }
+
+  privateKey = urlBase64.decode(privateKey);
+
+  if (privateKey.length !== 32) {
+    throw new Error('Vapid private key should be 32 bytes long when decoded.');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (arguments.length === 1 &amp;&amp; arguments[0] === null) {
+    vapidDetails = null;
+    return;
+  }
+
+  vapidHelper.validateSubject(subject);
+  vapidHelper.validatePublicKey(publicKey);
+  vapidHelper.<span class="apidocCodeKeywordSpan">validatePrivateKey</span>(privateKey);
+
+  vapidDetails = {
+    subject: subject,
+    publicKey: publicKey,
+    privateKey: privateKey
+  };
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.vapid_helper.validatePublicKey" id="apidoc.element.web-push.vapid_helper.validatePublicKey">
+        function <span class="apidocSignatureSpan">web-push.vapid_helper.</span>validatePublicKey
+        <span class="apidocSignatureSpan">(publicKey)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function validatePublicKey(publicKey) {
+  if (!publicKey) {
+    throw new Error('No key set vapidDetails.publicKey');
+  }
+
+  if (typeof publicKey !== 'string') {
+    throw new Error('Vapid public key is must be a URL safe Base 64 ' +
+      'encoded string.');
+  }
+
+  publicKey = urlBase64.decode(publicKey);
+
+  if (publicKey.length !== 65) {
+    throw new Error('Vapid public key should be 65 bytes long when decoded.');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  function(subject, publicKey, privateKey) {
+if (arguments.length === 1 &amp;&amp; arguments[0] === null) {
+  vapidDetails = null;
+  return;
+}
+
+vapidHelper.validateSubject(subject);
+vapidHelper.<span class="apidocCodeKeywordSpan">validatePublicKey</span>(publicKey);
+vapidHelper.validatePrivateKey(privateKey);
+
+vapidDetails = {
+  subject: subject,
+  publicKey: publicKey,
+  privateKey: privateKey
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.vapid_helper.validateSubject" id="apidoc.element.web-push.vapid_helper.validateSubject">
+        function <span class="apidocSignatureSpan">web-push.vapid_helper.</span>validateSubject
+        <span class="apidocSignatureSpan">(subject)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function validateSubject(subject) {
+  if (!subject) {
+    throw new Error('No subject set in vapidDetails.subject.');
+  }
+
+  if (typeof subject !== 'string' || subject.length === 0) {
+    throw new Error('The subject value must be a string containing a URL or ' +
+      'mailto: address. ' + subject);
+  }
+
+  if (subject.indexOf('mailto:') !== 0) {
+    const subjectParseResult = url.parse(subject);
+    if (!subjectParseResult.hostname) {
+      throw new Error('Vapid subject is not a url or mailto url. ' + subject);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+WebPushLib.prototype.setVapidDetails =
+  function(subject, publicKey, privateKey) {
+if (arguments.length === 1 &amp;&amp; arguments[0] === null) {
+  vapidDetails = null;
+  return;
+}
+
+vapidHelper.<span class="apidocCodeKeywordSpan">validateSubject</span>(subject);
+vapidHelper.validatePublicKey(publicKey);
+vapidHelper.validatePrivateKey(privateKey);
+
+vapidDetails = {
+  subject: subject,
+  publicKey: publicKey,
+  privateKey: privateKey
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-push.web_push_error" id="apidoc.module.web-push.web_push_error">module web-push.web_push_error</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.web_push_error.web_push_error" id="apidoc.element.web-push.web_push_error.web_push_error">
+        function <span class="apidocSignatureSpan">web-push.</span>web_push_error
+        <span class="apidocSignatureSpan">(message, statusCode, headers, body, endpoint)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WebPushError(message, statusCode, headers, body, endpoint) {
+  Error.captureStackTrace(this, this.constructor);
+
+  this.name = this.constructor.name;
+  this.message = message;
+  this.statusCode = statusCode;
+  this.headers = headers;
+  this.body = body;
+  this.endpoint = endpoint;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.web_push_error.super_" id="apidoc.element.web-push.web_push_error.super_">
+        function <span class="apidocSignatureSpan">web-push.web_push_error.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-push.web_push_js" id="apidoc.module.web-push.web_push_js">module web-push.web_push_js</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.web_push_js.web_push_js" id="apidoc.element.web-push.web_push_js.web_push_js">
+        function <span class="apidocSignatureSpan">web-push.</span>web_push_js
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WebPushLib() {
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.web-push.web_push_js.prototype" id="apidoc.module.web-push.web_push_js.prototype">module web-push.web_push_js.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.web_push_js.prototype.generateRequestDetails" id="apidoc.element.web-push.web_push_js.prototype.generateRequestDetails">
+        function <span class="apidocSignatureSpan">web-push.web_push_js.prototype.</span>generateRequestDetails
+        <span class="apidocSignatureSpan">(subscription, payload, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">generateRequestDetails = function (subscription, payload, options) {
+  if (!subscription || !subscription.endpoint) {
+    throw new Error('You must pass in a subscription with at least ' +
+      'an endpoint.');
+  }
+
+  if (typeof subscription.endpoint !== 'string' ||
+    subscription.endpoint.length === 0) {
+    throw new Error('The subscription endpoint must be a string with ' +
+      'a valid URL.');
+  }
+
+  if (payload) {
+    // Validate the subscription keys
+    if (!subscription.keys || !subscription.keys.p256dh ||
+      !subscription.keys.auth) {
+      throw new Error('To send a message with a payload, the ' +
+        'subscription must have \'auth\' and \'p256dh\' keys.');
+    }
+  }
+
+  let currentGCMAPIKey = gcmAPIKey;
+  let currentVapidDetails = vapidDetails;
+  let timeToLive = DEFAULT_TTL;
+  let extraHeaders = {};
+
+  if (options) {
+    const validOptionKeys = [
+      'headers',
+      'gcmAPIKey',
+      'vapidDetails',
+      'TTL'
+    ];
+    const optionKeys = Object.keys(options);
+    for (let i = 0; i &lt; optionKeys.length; i += 1) {
+      const optionKey = optionKeys[i];
+      if (validOptionKeys.indexOf(optionKey) === -1) {
+        throw new Error('\'' + optionKey + '\' is an invalid option. ' +
+          'The valid options are [\'' + validOptionKeys.join('\', \'') +
+          '\'].');
+      }
+    }
+
+    if (options.headers) {
+      extraHeaders = options.headers;
+      let duplicates = Object.keys(extraHeaders)
+          .filter(function (header) {
+            return typeof options[header] !== 'undefined';
+          });
+
+      if (duplicates.length &gt; 0) {
+        throw new Error('Duplicated headers defined [' +
+          duplicates.join(',') + ']. Please either define the header in the' +
+          'top level options OR in the \'headers\' key.');
+      }
+    }
+
+    if (options.gcmAPIKey) {
+      currentGCMAPIKey = options.gcmAPIKey;
+    }
+
+    if (options.vapidDetails) {
+      currentVapidDetails = options.vapidDetails;
+    }
+
+    if (options.TTL) {
+      timeToLive = options.TTL;
+    }
+  }
+
+  if (typeof timeToLive === 'undefined') {
+    timeToLive = DEFAULT_TTL;
+  }
+
+  const requestDetails = {
+    method: 'POST',
+    headers: {
+      TTL: timeToLive
+    }
+  };
+  Object.keys(extraHeaders).forEach(function (header) {
+    requestDetails.headers[header] = extraHeaders[header];
+  });
+  let requestPayload = null;
+
+  if (payload) {
+    if (!subscription.keys ||
+      typeof subscription !== 'object' ||
+      !subscription.keys.p256dh ||
+      !subscription.keys.auth) {
+      throw new Error(new Error('Unable to send a message with ' +
+        'payload to this subscription since it doesn\'t have the ' +
+        'required encryption keys'));
+    }
+
+    const encrypted = encryptionHelper.encrypt(
+      subscription.keys.p256dh, subscription.keys.auth, payload);
+
+    requestDetails.headers['Content-Length'] = encrypted.cipherText.length;
+    requestDetails.headers['Content-Type'] = 'application/octet-stream';
+    requestDetails.headers['Content-Encoding'] = 'aesgcm';
+    requestDetails.headers.Encryption = 'salt=' + encrypted.salt;
+    requestDetails.headers['Crypto-Key'] = 'dh=' + urlBase64.encode(encrypted.localPublicKey);
+
+    requestPayload = encrypted.cipherText;
+  } else {
+    requestDetails.headers['Content-Length'] = 0;
+  }
+
+  const isGCM = subscription.endpoint.indexOf(
+    'https://android.googleapis.com/gcm/send') === 0;
+  // VAPID isn't supported by GCM hence the if, else if.
+  if (isGCM) {
+    if (!currentGCMAPIKey) {
+      console.warn('Attempt to send push notification to GCM endpoint, ' +
+        'but no GCM key is defined. Please use setGCMApiKey() or add ' +
+        '\'gcmAPIKey\' as an option.');
+    } else {
+      requestDetails.headers.Authorization = 'key=' + currentGCMAPIKey;
+    }
+  } else if (currentVapidDetails) {
+    const parsedUrl = url.parse(subscription.endpoint);
+    const audience = parsedUrl.protocol + '//' +
+      parsedUrl.hostname;
+
+    const vapidHeaders = vapidHelper.getVapidHeaders(
+      audience,
+      currentVapidDetails.subject,
+      currentVapidDetails.publicKey,
+      currentVapidDetails.privateKey ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  TTL: &lt;Number&gt;,
+  headers: {
+    '&lt; header name &gt;': '&lt; header value &gt;'
+  }
+}
+
+try {
+  const details = webpush.<span class="apidocCodeKeywordSpan">generateRequestDetails</span>(
+    pushSubscription,
+    payload,
+    options
+  );
+} catch (err) {
+  console.error(err);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.web_push_js.prototype.sendNotification" id="apidoc.element.web-push.web_push_js.prototype.sendNotification">
+        function <span class="apidocSignatureSpan">web-push.web_push_js.prototype.</span>sendNotification
+        <span class="apidocSignatureSpan">(subscription, payload, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendNotification = function (subscription, payload, options) {
+  let requestDetails;
+  try {
+    requestDetails = this.generateRequestDetails(
+      subscription, payload, options);
+  } catch (err) {
+    return Promise.reject(err);
+  }
+
+  return new Promise(function(resolve, reject) {
+    const httpsOptions = {};
+    const urlParts = url.parse(requestDetails.endpoint);
+    httpsOptions.hostname = urlParts.hostname;
+    httpsOptions.port = urlParts.port;
+    httpsOptions.path = urlParts.path;
+
+    httpsOptions.headers = requestDetails.headers;
+    httpsOptions.method = requestDetails.method;
+
+    const pushRequest = https.request(httpsOptions, function(pushResponse) {
+      let responseText = '';
+
+      pushResponse.on('data', function(chunk) {
+        responseText += chunk;
+      });
+
+      pushResponse.on('end', function() {
+        if (pushResponse.statusCode !== 201) {
+          reject(new WebPushError('Received unexpected response code',
+            pushResponse.statusCode, pushResponse.headers, responseText, subscription.endpoint));
+        } else {
+          resolve({
+            statusCode: pushResponse.statusCode,
+            body: responseText,
+            headers: pushResponse.headers
+          });
+        }
+      });
+    });
+
+    pushRequest.on('error', function(e) {
+      reject(e);
+    });
+
+    if (requestDetails.body) {
+      pushRequest.write(requestDetails.body);
+    }
+
+    pushRequest.end();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  endpoint: '.....',
+  keys: {
+    auth: '.....',
+    p256dh: '.....'
+  }
+};
+
+webpush.<span class="apidocCodeKeywordSpan">sendNotification</span>(pushSubscription, 'Your Push Payload Text');
+```
+
+## Using VAPID Key for applicationServerKey
+
+When using your VAPID key in your web app, you'll need to convert the
+URL safe base64 string to a Uint8Array to pass into the subscribe call,
+which you can do like so:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.web_push_js.prototype.setGCMAPIKey" id="apidoc.element.web-push.web_push_js.prototype.setGCMAPIKey">
+        function <span class="apidocSignatureSpan">web-push.web_push_js.prototype.</span>setGCMAPIKey
+        <span class="apidocSignatureSpan">(apiKey)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setGCMAPIKey = function (apiKey) {
+  if (apiKey === null) {
+    gcmAPIKey = null;
+    return;
+  }
+
+  if (typeof apiKey === 'undefined' || typeof apiKey !== 'string' ||
+    apiKey.length === 0) {
+    throw new Error('The GCM API Key should be a non-empty string or null.');
+  }
+
+  gcmAPIKey = apiKey;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+const webpush = require('web-push');
+
+// VAPID keys should only be generated only once.
+const vapidKeys = webpush.generateVAPIDKeys();
+
+webpush.<span class="apidocCodeKeywordSpan">setGCMAPIKey</span>('&lt;Your GCM API Key Here&gt;');
+webpush.setVapidDetails(
+  'mailto:example@yourdomain.org',
+  vapidKeys.publicKey,
+  vapidKeys.privateKey
+);
+
+// This is the same output of calling JSON.stringify on a PushSubscription
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.web-push.web_push_js.prototype.setVapidDetails" id="apidoc.element.web-push.web_push_js.prototype.setVapidDetails">
+        function <span class="apidocSignatureSpan">web-push.web_push_js.prototype.</span>setVapidDetails
+        <span class="apidocSignatureSpan">(subject, publicKey, privateKey)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setVapidDetails = function (subject, publicKey, privateKey) {
+  if (arguments.length === 1 &amp;&amp; arguments[0] === null) {
+    vapidDetails = null;
+    return;
+  }
+
+  vapidHelper.validateSubject(subject);
+  vapidHelper.validatePublicKey(publicKey);
+  vapidHelper.validatePrivateKey(privateKey);
+
+  vapidDetails = {
+    subject: subject,
+    publicKey: publicKey,
+    privateKey: privateKey
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+const webpush = require('web-push');
+
+// VAPID keys should only be generated only once.
+const vapidKeys = webpush.generateVAPIDKeys();
+
+webpush.setGCMAPIKey('&lt;Your GCM API Key Here&gt;');
+webpush.<span class="apidocCodeKeywordSpan">setVapidDetails</span>(
+  'mailto:example@yourdomain.org',
+  vapidKeys.publicKey,
+  vapidKeys.privateKey
+);
+
+// This is the same output of calling JSON.stringify on a PushSubscription
+const pushSubscription = {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
